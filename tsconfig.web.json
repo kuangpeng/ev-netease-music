@@ -1,0 +1,21 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
+  "include": [
+    "src/renderer/src/**/*",
+    "src/preload/*.d.ts"
+  ],
+  "exclude": ["node_modules", "out"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@renderer/*": [
+        "src/renderer/src/*"
+      ]
+    },
+    "types": ["vite/client", "naive-ui/volar"],
+    "outDir": "out/renderer",
+    "allowJs": false,
+    "jsx": "preserve"
+  },
+}

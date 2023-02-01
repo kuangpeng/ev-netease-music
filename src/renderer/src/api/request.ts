@@ -20,7 +20,7 @@ export type BaseResponse = {
   code: number;
 }
 
-export type HttpRequestMethod = <T>(url: string, data?: unknown, params?: unknown) => Promise<AxiosResponse<T & BaseResponse>>
+export type HttpRequestMethod = <T>(url: string, data?: unknown) => Promise<T & BaseResponse>
 
 const toLogin = (): void => {
   // 跳转登录
@@ -55,7 +55,7 @@ const requestHandle = (config: AxiosRequestConfig): AxiosRequestConfig => {
 }
 
 const responseHandle = (res: AxiosResponse): AxiosResponse => {
-  const result = res
+  const result = res.data
   // TODO: 判断返回结果标志位，成功则返回结果数据
   // if () {
   //   return res
@@ -79,7 +79,7 @@ const interceptorsRequest = {
 // axios响应拦截处理
 const interceptorsResponse = {
   onFullfilled: (response: AxiosResponse): AxiosResponse => {
-    return responseHandle(response.data)
+    return responseHandle(response)
   },
   onRejected: (error: AxiosError): Promise<AxiosError> => {
     // 处理网络出错，服务器出错，对不同情况进行处理，如：401、404、503
@@ -101,14 +101,14 @@ const interceptorsResponse = {
 }
 
 const Get = (service: AxiosInstance): HttpRequestMethod => {
-  return (url, params) => service({
+  return (url, data) => service({
     url,
     method: 'get',
-    params
+    params: data
   })
 }
 
-const Post = (service: AxiosInstance): HttpRequestMethod => {
+const Post = (service: AxiosInstance): HttpRequestMethod=> {
   return (url, data) => service({
     url,
     method: 'post',

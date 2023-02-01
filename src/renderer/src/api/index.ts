@@ -1,5 +1,2 @@
-import song from './modules/song'
-
-export default {
-  song
-}
+export * as recommand from './modules/recommand'
+export * as song from './modules/song'

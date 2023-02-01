@@ -17,7 +17,9 @@ export default {
   },
   resolve: {
     alias: {
-      '@renderer': resolve(rendererPath, './src')
+      '@renderer': resolve(rendererPath, './src'),
+      '@api': resolve(rendererPath, './src/api'),
+      '@components': resolve(rendererPath, './src/components')
     }
   },
   plugins: [

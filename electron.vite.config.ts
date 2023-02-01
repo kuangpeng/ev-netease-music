@@ -8,6 +8,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import UnoCSS from 'unocss/vite'
 import presetUno from '@unocss/preset-uno'
 
+const rendererPath = resolve(process.cwd(), './src/renderer')
+
 export default defineConfig({
   main: {
     plugins: [externalizeDepsPlugin()]
@@ -18,7 +20,9 @@ export default defineConfig({
   renderer: {
     resolve: {
       alias: {
-        '@renderer': resolve('src/renderer/src')
+        '@renderer': resolve('src/renderer/src'),
+        '@api': resolve(rendererPath, './src/api'),
+        '@components': resolve(rendererPath, './src/components')
       }
     },
     plugins: [

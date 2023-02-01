@@ -1,3 +1,4 @@
+
 import 'virtual:svg-icons-register'
 import 'modern-css-reset'
 import 'vfonts/Lato.css'
@@ -7,8 +8,12 @@ import App from './App.vue'
 import useGlobalComponents from './components/index'
 import useAppPinia from './store'
 import { useAppRouter } from './router'
+import bootstrap from './core/bootstrap'
 
-const app = createApp(App)
+const app = createApp({
+  render: () => h(App),
+  created: bootstrap
+})
 
 useGlobalComponents(app)
 

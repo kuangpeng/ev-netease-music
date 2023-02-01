@@ -92,7 +92,7 @@ export const Validate = {
 
 /**
  * 中划线字符驼峰
- * @param {*} str 要转换的字符串
+ * @param {String} str 要转换的字符串
  * @returns 返回值
  */
 export const toHump = (str: string): string => {
@@ -104,4 +104,21 @@ export const toHump = (str: string): string => {
     .replace(/(\s|^)[a-z]/g, function (char) {
       return char.toUpperCase()
     })
+}
+
+/**
+ *
+ * @param {number} value 原始数据
+ * @returns 万/亿级简写，example: 10.1万
+ */
+export const numberFormat = (value: number): string => {
+  const k = 10000
+  const sizes = ['', '万', '亿']
+  if (value < k) {
+    return value + ''
+  } else {
+    const i = Math.floor(Math.log(value) / Math.log(k))
+
+    return (value / Math.pow(k, i)).toFixed(2) + sizes[i]
+  }
 }

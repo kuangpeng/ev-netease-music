@@ -32,6 +32,7 @@
     "@unocss/preset-uno": "^0.48.4",
     "@vicons/fluent": "^0.12.0",
     "@vicons/ionicons4": "^0.12.0",
+    "@vicons/ionicons5": "^0.12.0",
     "@vicons/material": "^0.12.0",
     "@vitejs/plugin-vue": "^3.2.0",
     "@vue/eslint-config-prettier": "^7.0.0",

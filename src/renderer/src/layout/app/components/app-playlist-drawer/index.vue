@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 import ChannelAdd48Regular from '@vicons/fluent/ChannelAdd48Regular'
-import { SongList } from '@renderer/components/song-list'
+import { SongList } from '@components/song-list'
 import { appOverride } from '@renderer/setting/theme-overrides'
 
 const showPlaylist = ref(false)

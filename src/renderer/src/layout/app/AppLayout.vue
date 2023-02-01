@@ -8,7 +8,7 @@
         <n-layout-sider bordered width="var(--app-siderbar-width)">
           <app-siderbar />
         </n-layout-sider>
-        <n-layout :native-scrollbar="false" :scrollbar-props="mainContentScrollbarProps">
+        <n-layout id="scrollContainer" :native-scrollbar="false" :scrollbar-props="mainContentScrollbarProps">
           <div class="main-content">
             <router-view />
           </div>
@@ -54,5 +54,8 @@ const mainContentScrollbarProps: ScrollbarProps = {
 .layout-main{
   top: var(--app-topbar-height)!important;
   bottom: var(--app-bottombar-height)!important;
+}
+.main-content{
+  padding-bottom: 50px;
 }
 </style>

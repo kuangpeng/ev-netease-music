@@ -1,6 +1,6 @@
 <template>
-  <n-el>
-    <div class="nav">
+  <div class="nav">
+    <n-el>
       <ul role="list">
         <template v-for="(n, index) in appNavs.home">
           <li v-if="n.link" :key="index">
@@ -10,8 +10,8 @@
           </li>
         </template>
       </ul>
-    </div>
-  </n-el>
+    </n-el>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -20,9 +20,10 @@ import { appNavs } from '@renderer/setting/app'
 
 <style lang="less" scoped>
 .nav{
+  width: 100%;
   display: flex;
   align-items: center;
-  height: 70px;
+  height: 60px;
   background-color: #fff;
 
   ul{

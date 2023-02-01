@@ -1,13 +1,13 @@
 <template>
   <n-space type="flex" justify="space-between">
     <div class="title" @click="handleClick">
-      <n-button text v-if="title.link">
-        {{ title.title }}
-        <template #icon>
+      <router-link v-if="link" :to="link">
+        <div class="link-wrap">
+          <span>{{ title }}</span>
           <n-icon :component="ArrowForwardIosFilled" />
-        </template>
-      </n-button>
-      <span v-else>{{ title.title }}</span>
+        </div>
+      </router-link>
+      <span v-else>{{ title }}</span>
     </div>
     <div>
       <slot name="right" />
@@ -17,23 +17,18 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import ArrowForwardIosFilled from '@vicons/material/ArrowForwardIosFilled'
 
 export interface BlockTitle {
   title: string;
   link?: string;
-  'on-click': (event) => void
+  'on-click': () => void
 }
 
-const props = defineProps({
-  title: {
-    type: Object as PropType<BlockTitle>,
-    required: true
-  }
-})
+const props = defineProps<BlockTitle>()
 
-const handleClick = () => {
+const handleClick = (): void => {
+  if (props.link) return;
   if (props['on-click']) {
     props['on-click']()
   }
@@ -42,8 +37,28 @@ const handleClick = () => {
 
 <style lang="less" scoped>
 .title{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: var(--text-color-1);
+
+  .link-wrap{
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+    padding: 5px 0;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  a{
+    display: inline-block;
+    line-height: 1.5;
+    color: #333;
+
+    &:hover{
+      color: #000;
+    }
+  }
+  .n-icon{
+    margin-top: -3px;
+  }
 }
 </style>

@@ -18,8 +18,8 @@
       </n-button>
       <n-button circle secondary size="large">
         <template #icon>
-          <n-icon v-show="playStatus == PlayStatus.PLAY" size="27" :component="IosPlay" title="播放" />
-          <n-icon v-show="playStatus == PlayStatus.PAUSE" size="27" :component="IosPause" title="暂停" />
+          <span v-show="playStatus == PlayStatus.PLAY">&nbsp;<n-icon size="27" :component="MdPlay" title="播放" /></span>
+          <span v-show="playStatus == PlayStatus.PAUSE"><n-icon size="27" :component="IosPause" title="暂停" /></span>
         </template>
       </n-button>
       <n-button text>
@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import IosPlay from '@vicons/ionicons4/IosPlay'
+import MdPlay from '@vicons/ionicons4/MdPlay'
 import IosPause from '@vicons/ionicons4/IosPause'
 import SkipPreviousFilled from '@vicons/material/SkipPreviousFilled'
 import SkipNextFilled from '@vicons/material/SkipNextFilled'

@@ -4,10 +4,6 @@ import HomeLayout from '@renderer/layout/home/HomeLayout.vue'
 
 const home: RouteRecordRaw[] = [
   {
-    path: '/',
-    redirect: '/home'
-  },
-  {
     path: '/home',
     component: HomeLayout,
     redirect: { name: 'Recommand' },

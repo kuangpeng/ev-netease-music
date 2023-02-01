@@ -1,7 +1,7 @@
 <template>
-  <section-block-item>
+  <div>
 
-  </section-block-item>
+  </div>
 </template>
 
 <script setup lang="ts">

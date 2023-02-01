@@ -3,16 +3,18 @@
     <n-carousel
       ref="carousel"
       effect="card"
-      prev-slide-style="transform: translateX(-130%) translateZ(-500px);"
-      next-slide-style="transform: translateX(70%) translateZ(-500px);"
       style="height: 200px"
+      prev-slide-style="opacity:0.8;transform: translateX(-125%) translateZ(-250px);"
+      next-slide-style="opacity:0.8;transform: translateX(25%) translateZ(-250px);"
+      :transition-props="{ duration: 500 }"
       :show-dots="false"
       :autoplay="true"
       :on-update:current-index="handleSlide"
     >
-      <n-carousel-item v-for="(item, index) in carouselList" :key="index" :style="{ width: '60%' }">
-        <div class="carousel-item">
-          <img :src="item.img" />
+      <n-carousel-item v-for="(item, index) in carouselList" :key="index" :style="{ width: '50%' }">
+        <div class="carousel-item" @click="handleClick(index)">
+          <img :src="item.imageUrl + '?param=540y200'" />
+          <span class="type" :style="{ backgroundColor: item.titleColor }">{{ item.typeTitle }}</span>
         </div>
       </n-carousel-item>
     </n-carousel>
@@ -30,7 +32,7 @@
     </div>
     <n-el>
       <div class="carousel-dots">
-        <span v-for="(i, index) in carouselList" :key="index" :class="{ active: index == carouselIndex }" @click="handleChangeSlide(index)"></span>
+        <span v-for="index in carouselList.length" :key="index" :class="{ active: (index - 1) == carouselIndex }" @click="handleChangeSlide(index - 1)"></span>
       </div>
     </n-el>
   </div>
@@ -40,24 +42,18 @@
 import { CarouselInst } from 'naive-ui'
 import IosArrowBack from '@vicons/ionicons4/IosArrowBack'
 import IosArrowForward from '@vicons/ionicons4/IosArrowForward'
+import { Banner } from '@renderer/types/home'
+import { TargetType } from '@renderer/types/song'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const carousel = ref<CarouselInst | null>(null)
-const carouselList = ref([
-  {
-    id: 1,
-    img: 'http://p1.music.126.net/xjp_xzlQCn9M56HPVce0QA==/109951168245145586.jpg?imageView&quality=89'
-  },
-  {
-    id: 2,
-    img: 'http://p1.music.126.net/xjp_xzlQCn9M56HPVce0QA==/109951168245145586.jpg?imageView&quality=89'
-  },
-  {
-    id: 3,
-    img: 'http://p1.music.126.net/xjp_xzlQCn9M56HPVce0QA==/109951168245145586.jpg?imageView&quality=89'
-  }
-])
-
 const carouselIndex = ref(0)
+
+const props = defineProps<{
+  carouselList: Banner[]
+}>()
 
 const handleSlide = (currentIndex: number): void => {
   carouselIndex.value = currentIndex
@@ -72,6 +68,21 @@ const handlePNSlide = (flag: -1 | 1): void => {
     carousel.value?.next()
   }
 }
+
+const handleClick = (index: number): void => {
+  if (index == carouselIndex.value) {
+    const target = props.carouselList[index]
+    console.log(target.targetType)
+    if (target.targetType == TargetType.PLAY) {
+      // TODO: click to play
+    } else if (target.targetType == TargetType.OPEN_URL) {
+      // TODO: open url with browser
+      window.open(target.url)
+    } else if (target.targetType == TargetType.DETAIL) {
+      router.push('/album/' + target.targetId)
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
@@ -81,6 +92,7 @@ const handlePNSlide = (flag: -1 | 1): void => {
   }
 }
 .carousel-item{
+  position: relative;
   height: 100%;
   border-radius: 8px;
   overflow: hidden;
@@ -91,6 +103,16 @@ const handlePNSlide = (flag: -1 | 1): void => {
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
+  }
+
+  .type{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 8px;
+    padding: 2px 5px;
+    color: #fff;
+    font-size: 0.8em;
   }
 }
 .carousel-dots{
@@ -145,5 +167,8 @@ const handlePNSlide = (flag: -1 | 1): void => {
   .arrow-right{
     right: 10px;
   }
+}
+.n-carousel__slide--current{
+  cursor: pointer;
 }
 </style>

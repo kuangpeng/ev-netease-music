@@ -10,6 +10,7 @@ specifiers:
   '@unocss/preset-uno': ^0.48.4
   '@vicons/fluent': ^0.12.0
   '@vicons/ionicons4': ^0.12.0
+  '@vicons/ionicons5': ^0.12.0
   '@vicons/material': ^0.12.0
   '@vitejs/plugin-vue': ^3.2.0
   '@vue/eslint-config-prettier': ^7.0.0
@@ -50,6 +51,7 @@ devDependencies:
   '@unocss/preset-uno': 0.48.4
   '@vicons/fluent': 0.12.0
   '@vicons/ionicons4': 0.12.0
+  '@vicons/ionicons5': 0.12.0
   '@vicons/material': 0.12.0
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.5+vue@3.2.45
   '@vue/eslint-config-prettier': 7.0.0_3vccgihvamfrdnqonsut5ihh4a
@@ -1216,6 +1218,10 @@ packages:
 
   /@vicons/ionicons4/0.12.0:
     resolution: {integrity: sha512-i+7YwlpCrqD6m9esbZLy1bpVQlh4CKugtS3OzgfNw6BLTQQK6HT7drktaJgcESj/BTr4avdNbAtMQXx56wSVMg==}
+    dev: true
+
+  /@vicons/ionicons5/0.12.0:
+    resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
     dev: true
 
   /@vicons/material/0.12.0:

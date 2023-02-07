@@ -34,7 +34,7 @@ const playlist = {
     }>('/playlist/highquality/tags')
   },
   getHighqualityList(params: ParamHighQuality) {
-    return http.Get<ResultHighQuality>('/playlist/highquality', params)
+    return http.Get<ResultHighQuality>('/top/playlist/highquality', params)
   },
   getPlayList(params: ParamPlaylist) {
     return http.Get<ResultPlayList>('/top/playlist', params)

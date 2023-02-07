@@ -96,3 +96,31 @@ export const appNavs = {
     },
   ]
 }
+
+export const Categories = [
+  {
+    name: '语种',
+    icon: 'global',
+    category: 0
+  },
+  {
+    name: '风格',
+    icon: 'piano',
+    category: 1
+  },
+  {
+    name: '场景',
+    icon: 'coffee',
+    category: 2
+  },
+  {
+    name: '情感',
+    icon: 'emoji',
+    category: 3
+  },
+  {
+    name: '主题',
+    icon: 'module',
+    category: 4
+  },
+]

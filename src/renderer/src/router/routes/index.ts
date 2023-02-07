@@ -17,6 +17,10 @@ const index: RouteRecordRaw[] = [
   {
     path: '/album/:id',
     component: () => import('@renderer/views/detail/albumDetail.vue')
-  }
+  },
+  {
+    path: '/playlist/top/:id',
+    component: () => import('@renderer/views/detail/playlistTopDetail.vue')
+  },
 ]
 export default index

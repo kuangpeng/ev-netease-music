@@ -18,8 +18,7 @@ function getModuleThemeOverride(m: keyof GlobalThemeOverrides): GlobalThemeOverr
 
 export const lightThemeOverrides: GlobalThemeOverrides = {
   common: {
-    primaryColor: '#ec4141',
-    primaryColorHover: '#ec4141'
+    primaryColor: '#ec4141'
   }
 }
 

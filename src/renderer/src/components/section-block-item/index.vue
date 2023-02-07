@@ -23,8 +23,8 @@
             <div class="author">
               <n-space v-if="showAuthor" type="flex" justify="start" align="center" :size="[2, 0]" :wrap-item="false">
                 <n-icon size="14" :component="MdContact" />
-                <span>author</span>
-                <n-icon size="14" :component="MdContact" />
+                <span>{{ creator?.nickname }}</span>
+                <!-- <n-icon size="14" :component="MdContact" /> -->
               </n-space>
             </div>
             <div class="btn-play" @click.stop="handlePlay(id)">
@@ -50,6 +50,7 @@ import Play16Regular from '@vicons/fluent/Play16Regular'
 import Play16Filled from '@vicons/fluent/Play16Filled'
 import MdContact from '@vicons/ionicons4/MdContact'
 import { numberFormat } from '@renderer/utils/utils'
+import { Creator } from '@renderer/types/playlist'
 
 export interface Props {
   showTop?: boolean;
@@ -61,6 +62,7 @@ export interface Props {
   link: string;
   id?: number;
   playCount?: number;
+  creator?: Creator;
 }
 
 const router = useRouter()

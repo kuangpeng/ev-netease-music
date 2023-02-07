@@ -1,11 +1,13 @@
 <template>
-  <n-el>
-    <n-space justify="space-between" :wrap-item="false" style="height: 100%;" :size="0">
-      <bottom-song-box class="bottombar-left" />
-      <bottom-song-control class="bottombar-center" />
-      <bottom-song-set class="bottombar-right" />
-    </n-space>
-  </n-el>
+  <div>
+    <n-el>
+      <n-space justify="space-between" :wrap-item="false" style="height: 100%;" :size="0">
+        <bottom-song-box class="bottombar-left" />
+        <bottom-song-control class="bottombar-center" />
+        <bottom-song-set class="bottombar-right" />
+      </n-space>
+    </n-el>
+  </div>
 </template>
 
 <script setup lang="ts">

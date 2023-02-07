@@ -1,6 +1,6 @@
 <template>
   <div id="app-layout">
-    <n-layout position="absolute">
+    <n-layout position="absolute" class="z-100">
       <n-layout-header class="layout-header">
         <app-topbar />
       </n-layout-header>
@@ -41,6 +41,7 @@ const mainContentScrollbarProps: ScrollbarProps = {
 <style lang="less" scoped>
 #app-layout{
   position: relative;
+  // z-index: 100;
   width: 100vw;
   height: 100vh;
 }
@@ -49,7 +50,7 @@ const mainContentScrollbarProps: ScrollbarProps = {
 }
 .layout-footer{
   height: var(--app-bottombar-height);
-  background: none;
+  background: #fff;
 }
 .layout-main{
   top: var(--app-topbar-height)!important;

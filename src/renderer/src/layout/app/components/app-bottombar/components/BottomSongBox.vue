@@ -34,6 +34,7 @@ const setCarousel = (status: boolean): void => {
 <style lang="less" scoped>
 .song-box{
   position: relative;
+  z-index: 100;
   flex: 1;
 }
 .carousel-wrap{

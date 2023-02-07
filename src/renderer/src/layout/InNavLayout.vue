@@ -23,7 +23,7 @@
     top: var(--app-topbar-height);
     left: var(--app-siderbar-width);
     right: 0;
-    z-index: 20;
+    z-index: 50;
     height: 60px;
     padding: 0 30px;
     background-color: #fff;

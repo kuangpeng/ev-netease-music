@@ -1,10 +1,18 @@
-import { http } from '../base'
-import { AxiosResponse } from 'axios'
+import type { Track } from '@renderer/types/playlist';
+import { Http } from '../base'
+
+const http = Http()
+
+interface ResultSongDetail {
+  songs: Track[];
+}
 
 const song = {
-  getTestData<SongType> (params): Promise<AxiosResponse<SongType>> {
-    return http.Get<SongType>('https://cnodejs.org/api/v1/topics', params)
+  getSongDetail (params: { ids: string }) {
+    return http.Get<ResultSongDetail>('/song/detail', params)
   }
 }
+
+export type SongApi = typeof song
 
 export default song

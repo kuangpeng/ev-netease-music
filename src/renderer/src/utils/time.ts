@@ -48,6 +48,7 @@ export const parseTime = (time: string | number | object, cFormat: string): stri
   })
   return time_str
 }
+
 /**
  * @param {number} time
  * @param {string} option

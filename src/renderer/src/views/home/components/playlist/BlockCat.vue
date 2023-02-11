@@ -24,31 +24,6 @@
             <span class="cat-link" :class="{active: selectedCat == catList.all?.name}" @click="handleChooseCat(catList.all?.name || '')">{{ catList.all?.name }}</span>
           </div>
 
-          <!-- <n-grid v-for="(item, index) in catList.cats" :key="index"
-            class="list-item"
-          >
-            <n-grid-item :span="3">
-              <div class="cat-tit">
-              <n-icon size="23">
-                <svg-icon :name="item.icon" />
-              </n-icon>
-              <span>{{ item.name }}</span>
-            </div>
-            </n-grid-item>
-            <n-grid-item :span="21">
-              <div class="c-sec">
-              <n-grid :x-gap="0" :y-gap="10" :cols="6">
-                <n-grid-item v-for="c in item.cats" :key="c.name">
-                  <span class="cat-link" @click="handleChooseCat(c.name)">
-                    {{ c.name }}
-                    <i v-if="c.hot">HOT</i>
-                  </span>
-                </n-grid-item>
-              </n-grid>
-            </div>
-            </n-grid-item>
-          </n-grid> -->
-
           <div class="catlist-ul">
             <div v-for="(item, index) in catList.cats" :key="index" class="list-item">
               <div class="ul-h">
@@ -81,7 +56,7 @@
 <script setup lang="ts">
 import KeyboardArrowRightFilled from '@vicons/material/KeyboardArrowRightFilled'
 import usePlaylistStore from '@renderer/store/modules/playlist'
-import { Cat } from '@renderer/types/playlist'
+import type { Cat } from '@renderer/types/playlist'
 import { Categories } from '@renderer/setting/app'
 import { PopoverInst } from 'naive-ui'
 
@@ -93,7 +68,7 @@ type CatList = {
 }
 
 const emit = defineEmits<{
-  (e: 'choose:cat-name', name: string) :void
+  (e: 'choose:cat', name: string) :void
 }>()
 
 const playlistStore = usePlaylistStore()
@@ -123,7 +98,7 @@ const handleChooseCat = (name: string) => {
   if (!name) return;
   catPopRef.value?.setShow(false)
   selectedCat.value = name
-  emit('choose:cat-name', name)
+  emit('choose:cat', name)
 }
 
 onMounted(() => {
@@ -141,9 +116,7 @@ onMounted(() => {
     padding-bottom: 12px;
     border-bottom: 1px solid var(--border-color);
   }
-  .catlist-ul{
 
-  }
   .list-item{
     display: flex;
     width: 100%;
@@ -216,7 +189,7 @@ onMounted(() => {
     &.active{
       // TODO: background opacity
       // background-color: var(--primary-color);
-      color: var(--primary-color)
+      color: var(--primary-color, red);
     }
   }
 }

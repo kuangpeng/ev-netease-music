@@ -1,10 +1,6 @@
 <template>
-  <div class="section-list">
-    <div class="section-list-header">
-      <slot name="header" />
-    </div>
-    <div class="section-list-body">
-      <n-el>
+  <section-list title="最新音乐" link="/home/new">
+    <n-el>
       <n-grid :x-gap="18" :y-gap="16" :cols="3">
         <n-gi v-for="(item, index) in newSongList" :key="index" class="song-gi-item">
           <n-space type="flex" align="start" >
@@ -30,12 +26,12 @@
         </n-gi>
       </n-grid>
     </n-el>
-    </div>
-  </div>
+  </section-list>
 </template>
 
 <script setup lang="ts">
-import { RecNewSong } from '@renderer/types/home'
+import SectionList from './SectionList.vue'
+import type { RecNewSong } from '@renderer/types/home'
 import Play16Filled from '@vicons/fluent/Play16Filled'
 
 defineProps<{
@@ -49,12 +45,6 @@ const handleClick = (id: number) => {
 </script>
 
 <style lang="less" scoped>
-.section-list{
-  margin-top: 30px;
-  .section-list-body{
-    margin-top: 10px;
-  }
-}
 .song-gi-item{
   border-radius: 5px;
   overflow: hidden;

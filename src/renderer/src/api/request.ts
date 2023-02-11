@@ -9,18 +9,18 @@ import qs from 'qs'
 // 提示语功能引入
 // import { Toast } from 'vant'
 
-export interface HttpOption {
-  url: string;
-  data?: unknown;
-  method?: string;
-  headers?: unknown;
-}
+// export interface HttpOption {
+//   url: string;
+//   data?: unknown;
+//   method?: string;
+//   headers?: unknown;
+// }
 
-export type BaseResponse = {
+type BaseResponse = {
   code: number;
 }
 
-export type HttpRequestMethod = <T>(url: string, data?: unknown) => Promise<T & BaseResponse>
+type HttpRequestMethod = <T>(url: string, data?: unknown) => Promise<T & BaseResponse>
 
 const toLogin = (): void => {
   // 跳转登录

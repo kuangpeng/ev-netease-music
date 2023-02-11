@@ -44,7 +44,7 @@
 
 <script setup lang="ts">
 // import type { PropType } from 'vue'
-// import { Song }  from '@renderer/types/song'
+// import type { Song }  from '@renderer/types/song'
 import IosLink from '@vicons/ionicons4/IosLink'
 import IosPlay from '@vicons/ionicons4/IosPlay'
 

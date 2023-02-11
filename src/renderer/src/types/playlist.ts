@@ -1,6 +1,6 @@
 // 歌单相关
-import { Song } from './song'
-import { Gender } from './basetype'
+import type { Album } from './song'
+import type { Gender } from './basetype'
 
 export interface Cat {
   name: string;
@@ -36,22 +36,23 @@ export interface PlayListItem {
   id: number;
   name: string;
   description: string;
-  coverImgId: number;
+  coverImgId?: number;
   coverImgUrl: string;
-  coverImgId_str: string;
-  userId: number;
+  coverImgId_str?: string;
+  userId?: number;
   createTime: number;
-  updateTime: number;
-  status: number;
+  updateTime?: number;
+  status?: number;
   tags: string[];
-  backgroundCoverUrl: string;
-  titleImageUrl: string;
-  englishTitle: string;
+  backgroundCoverUrl?: string;
+  titleImageUrl?: string;
+  englishTitle?: string;
+  playCount: number;
   shareCount: number;
   commentCount: number;
-  tracks: Song[];
+  tracks?: Track[];
   subscribedCount: number;
-  trackCount: number;
+  trackCount?: number;
   creator: Creator;
 }
 
@@ -92,3 +93,18 @@ export interface Creator {
   anchor: boolean;
   avatarImgId_str: string;
 }
+
+export interface Track {
+  id: number;
+  al: Album;
+  ar: Array<{
+    id: number;
+    name: string;
+    alias: string[];
+    tns: string[]
+  }>;
+  name: string;
+  publishTime: number;
+  dt: number;
+}
+

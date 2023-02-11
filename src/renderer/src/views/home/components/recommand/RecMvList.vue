@@ -1,10 +1,6 @@
 <template>
-  <div class="section-list">
-    <div class="section-list-header">
-      <slot name="header" />
-    </div>
-    <div class="section-list-body">
-      <n-el>
+  <section-list title="最新MV" link="/v/mv">
+    <n-el>
       <n-grid :x-gap="18" :cols="4">
         <n-gi v-for="(item, index) in recMvList" :key="index" class="mv-gi-item">
           <n-space type="flex" :vertical="true" align="start" :size="[0, 10]">
@@ -39,14 +35,14 @@
         </n-gi>
       </n-grid>
     </n-el>
-    </div>
-  </div>
+  </section-list>
 </template>
 
 <script setup lang="ts">
+import SectionList from './SectionList.vue'
 import Play16Regular from '@vicons/fluent/Play16Regular'
 import { numberFormat } from '@renderer/utils/utils'
-import { RecNewMV } from '@renderer/types/home'
+import type { RecNewMV } from '@renderer/types/home'
 
 defineProps<{
   recMvList: RecNewMV[]
@@ -62,13 +58,6 @@ const handleClick = (id: number) => {
 </script>
 
 <style lang="less" scoped>
-.section-list{
-  margin-top: 30px;
-  .section-list-body{
-    margin-top: 10px;
-  }
-}
-
 .mv-cover{
   cursor: pointer;
   position: relative;

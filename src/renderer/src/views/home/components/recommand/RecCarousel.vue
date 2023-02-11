@@ -42,7 +42,7 @@
 import { CarouselInst } from 'naive-ui'
 import IosArrowBack from '@vicons/ionicons4/IosArrowBack'
 import IosArrowForward from '@vicons/ionicons4/IosArrowForward'
-import { Banner } from '@renderer/types/home'
+import type { Banner } from '@renderer/types/home'
 import { TargetType } from '@renderer/types/song'
 import { useRouter } from 'vue-router'
 

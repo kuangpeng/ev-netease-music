@@ -1,5 +1,5 @@
-import { http } from '../base'
-import type { CatList, HighQualityTag, PlayListItem } from '@renderer/types/playlist'
+import { Http } from '../base'
+import type { CatList, HighQualityTag, PlayListItem, Track } from '@renderer/types/playlist'
 
 interface ParamPlaylist {
   cat: string;
@@ -9,7 +9,7 @@ interface ParamPlaylist {
 interface ResultPlayList {
   total: number;
   more: boolean;
-  playlists: PlayListItem[];
+  playlist: PlayListItem[];
   cat: string;
 }
 interface ParamHighQuality {
@@ -23,6 +23,22 @@ interface ResultHighQuality {
   total: number;
   playlists: PlayListItem[]
 }
+interface ResultPlayListDetail {
+  // relatedVideos?: object;
+  playlist: PlayListItem;
+  urls?: string;
+  // privileges:
+}
+interface ParamPlayListTrackAll {
+  id: number;
+  limit?: number;
+  offset?: number;
+}
+interface ResultPlayListTrackAll {
+  songs: Track[];
+}
+
+const http = Http()
 
 const playlist = {
   getCatList() {
@@ -38,6 +54,12 @@ const playlist = {
   },
   getPlayList(params: ParamPlaylist) {
     return http.Get<ResultPlayList>('/top/playlist', params)
+  },
+  getPlayListDetail(params: {id: number}) {
+    return http.Get<ResultPlayListDetail>('/playlist/detail', params)
+  },
+  getPlayListTrackAll(params: ParamPlayListTrackAll) {
+    return http.Get<ResultPlayListTrackAll>('/playlist/track/all', params)
   }
 }
 

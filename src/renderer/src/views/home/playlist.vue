@@ -2,7 +2,7 @@
   <div class="playlist-wrap">
     <section-high-quality :name="selectedCat" />
     <n-space type="flex" justify="space-between" align="center" class="mt-4">
-      <block-cat @choose:cat-name="handleSetCat" />
+      <block-cat @choose:cat="handleSetCat" />
       <div class="cats">
         <span
           v-for="(item, index) in hotCatList"
@@ -40,9 +40,9 @@ import BlockCat from './components/playlist/BlockCat.vue'
 import BlockList from './components/playlist/BlockList.vue'
 
 import usePlaylistStore from '@renderer/store/modules/playlist'
-import { PlayListItem } from '@renderer/types/playlist'
+import type { Pagination } from '@renderer/types/basetype'
+import type { PlayListItem } from '@renderer/types/playlist'
 import playlist from '@renderer/api/modules/playlist'
-import { Pagination } from '@renderer/types/basetype'
 import { useFetchList } from '@renderer/hooks/useFetchList'
 
 const playlistStore = usePlaylistStore()
@@ -57,6 +57,10 @@ const hotCatList = computed(() => {
 
 const handleSetCat = (name: string) => {
   selectedCat.value = name
+
+  pagination.page = 1
+
+  getList()
 }
 
 const pagination = reactive<Pagination>({
@@ -67,7 +71,7 @@ const pagination = reactive<Pagination>({
 
 const handlePage = (page) => {
   pagination.page = page
-  fetchList()
+  getList()
 }
 
 const offset = computed(() => (pagination.page - 1) * pagination.limit)
@@ -77,17 +81,17 @@ const params = reactive({
   offset
 })
 
-const { fetch } = useFetchList<typeof playlist.getPlayList, typeof params>(playlist.getPlayList)
+const fetchList = useFetchList<typeof playlist.getPlayList>(playlist.getPlayList)
 
 const isLoading = ref(false)
 
-function fetchList() {
+function getList() {
   isLoading.value = true
 
-  const { onResult, onError, onEnd } = fetch(params)
+  const { onResult, onError, onEnd } = fetchList(params)
 
   onResult(res => {
-    list.value = res.playlists
+    list.value = res.playlist
     pagination.total = res.total
   })
 
@@ -100,7 +104,7 @@ function fetchList() {
   })
 }
 
-fetchList()
+getList()
 </script>
 
 <style lang="less" scoped>

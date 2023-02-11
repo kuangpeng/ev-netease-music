@@ -50,7 +50,7 @@ import Play16Regular from '@vicons/fluent/Play16Regular'
 import Play16Filled from '@vicons/fluent/Play16Filled'
 import MdContact from '@vicons/ionicons4/MdContact'
 import { numberFormat } from '@renderer/utils/utils'
-import { Creator } from '@renderer/types/playlist'
+import type { Creator } from '@renderer/types/playlist'
 
 export interface Props {
   showTop?: boolean;

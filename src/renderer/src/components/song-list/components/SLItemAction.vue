@@ -17,11 +17,17 @@
 import IosHeartEmpty from '@vicons/ionicons4/IosHeartEmpty'
 import ArrowDownload20Regular from '@vicons/fluent/ArrowDownload20Regular'
 
-import { songLike, songDownLoad } from '@renderer/modules/song'
-
 defineProps<{
   id: number
 }>()
+
+const songLike = (id: number) => {
+  console.log('like ', id)
+}
+
+const songDownLoad = (id: number) => {
+  console.log('down ', id)
+}
 
 </script>
 

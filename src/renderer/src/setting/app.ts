@@ -1,4 +1,4 @@
-export const appNavs = {
+export const AppNavs = {
   global: [
     {
       title: '发现音乐',
@@ -124,3 +124,9 @@ export const Categories = [
     category: 4
   },
 ]
+
+export const AppSetting = {
+  playlist: {
+    defaultCover: 'cover-default.jpg'
+  }
+}

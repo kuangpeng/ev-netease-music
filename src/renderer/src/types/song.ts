@@ -16,10 +16,6 @@ export interface Album {
   picUrl: string;
 }
 
-export type SongListItem = Song & {
-  index: number;
-}
-
 export enum TargetType {
   PLAY = 1,
   OPEN_URL = 3000,

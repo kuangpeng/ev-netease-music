@@ -1,5 +1,5 @@
-import { http } from '../base'
-import { Banner, RecListItem, RecNewSong, RecNewMV } from '@renderer/types/home'
+import { Http } from '../base'
+import type { Banner, RecListItem, RecNewSong, RecNewMV } from '@renderer/types/home'
 
 interface BannerResult {
   banners: Banner[]
@@ -19,6 +19,8 @@ interface NewMV {
   result: RecNewMV[];
   category: number;
 }
+
+const http = Http()
 
 const recommand = {
   getBanner() {

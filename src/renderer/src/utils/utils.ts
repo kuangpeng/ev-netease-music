@@ -122,3 +122,12 @@ export const numberFormat = (value: number): string => {
     return (value / Math.pow(k, i)).toFixed(2) + sizes[i]
   }
 }
+
+/**
+ *
+ * @param name 图片名称（包含后缀）
+ * @returns 图片引用地址
+ */
+export const getAssetsImg = (name: string): string => {
+  return new URL(`/assets/images/${name}`, import.meta.url).href
+}

@@ -1,14 +1,14 @@
 <template>
   <div class="sider-menus">
     <div class="main-menu menu-section">
-      <sider-menu-item v-for="(m, index) in appNavs.global"
+      <sider-menu-item v-for="(m, index) in AppNavs.global"
         :key="index"
         v-bind="m"
       ></sider-menu-item>
     </div>
     <div class="my-menu menu-section">
       <sider-menu-title title="我的音乐" />
-      <sider-menu-item v-for="(m, index) in appNavs.my"
+      <sider-menu-item v-for="(m, index) in AppNavs.my"
         :key="index"
         v-bind="m"
       ></sider-menu-item>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { appNavs } from '@renderer/setting/app'
+import { AppNavs } from '@renderer/setting/app'
 import SiderMenuItem from './components/SiderMenuItem.vue'
 import SiderMenuTitle from './components/SiderMenuTitle.vue'
 

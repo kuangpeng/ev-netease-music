@@ -1,14 +1,14 @@
 <template>
   <in-nav-layout>
     <template #nav>
-      <home-nav />
+      <tab-nav :navs="AppNavs.home" />
     </template>
   </in-nav-layout>
 </template>
 
 <script setup lang="ts">
 import InNavLayout from '../InNavLayout.vue'
-import HomeNav from './components/home-nav/index.vue'
+import { AppNavs } from '@renderer/setting/app'
 </script>
 
 <style lang="less" scoped>

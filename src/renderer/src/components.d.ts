@@ -8,8 +8,11 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     NAffix: typeof import('naive-ui')['NAffix']
+    NAlert: typeof import('naive-ui')['NAlert']
+    NAvatar: typeof import('naive-ui')['NAvatar']
     NBadge: typeof import('naive-ui')['NBadge']
     NButton: typeof import('naive-ui')['NButton']
+    NButtonGroup: typeof import('naive-ui')['NButtonGroup']
     NCarousel: typeof import('naive-ui')['NCarousel']
     NCarouselItem: typeof import('naive-ui')['NCarouselItem']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
@@ -47,5 +50,6 @@ declare module '@vue/runtime-core' {
     SongList: typeof import('./components/song-list/SongList.vue')['default']
     SongTableList: typeof import('./components/song-list/SongTableList.vue')['default']
     SvgIcon: typeof import('./components/svg-icon/index.vue')['default']
+    TabNav: typeof import('./components/tab-nav/index.vue')['default']
   }
 }

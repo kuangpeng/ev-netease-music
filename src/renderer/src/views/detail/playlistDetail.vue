@@ -8,7 +8,7 @@
 
     <div class="detail-content">
       <keep-alive>
-        <component :is="activeCmp" />
+        <component v-bind:is="activeCmp" :id="playId" />
       </keep-alive>
     </div>
 
@@ -23,7 +23,7 @@ import DetailSongList from './components/playlist/DetailSongList.vue'
 import DetailComment from './components/playlist/DetailComment.vue'
 import DetailCollector from './components/playlist/DetailCollector.vue'
 
-import type { PlayListItem, Track } from '@renderer/types/playlist'
+import type { PlayListItem } from '@renderer/types/playlist'
 import { useFetchList } from '@renderer/hooks/useFetchList'
 
 const route = useRoute()
@@ -68,31 +68,16 @@ const params = {
 
 const detail = ref<PlayListItem | null>(null)
 
-const songList = ref<Track[]>([])
-
 const fetchList = useFetchList<typeof playlist.getPlayListDetail>(playlist.getPlayListDetail)
 
 const { onResult, onError } = fetchList(params)
 
 onResult(res => {
   detail.value = res.playlist
-  songList.value = res.playlist?.tracks || []
   navs.value[1].title += `(${res.playlist.commentCount})`
 })
 
 onError(err => {
-  console.log(err)
-})
-
-const fetchTrackList = useFetchList<typeof playlist.getPlayListTrackAll>(playlist.getPlayListTrackAll)
-
-const { onResult: onTrackResult, onError: onTrackError } = fetchTrackList(params)
-
-onTrackResult(res => {
-  songList.value = res.songs
-})
-
-onTrackError(err => {
   console.log(err)
 })
 

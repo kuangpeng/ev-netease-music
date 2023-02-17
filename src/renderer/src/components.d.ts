@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Main: typeof import('./components/song-table/main.vue')['default']
     NAffix: typeof import('naive-ui')['NAffix']
     NAlert: typeof import('naive-ui')['NAlert']
     NAvatar: typeof import('naive-ui')['NAvatar']
@@ -48,8 +49,12 @@ declare module '@vue/runtime-core' {
     SectionBlockTitle: typeof import('./components/section-block-title/index.vue')['default']
     SLItemAction: typeof import('./components/song-list/components/SLItemAction.vue')['default']
     SongList: typeof import('./components/song-list/SongList.vue')['default']
+    SongTable: typeof import('./components/song-table/main.vue')['default']
     SongTableList: typeof import('./components/song-list/SongTableList.vue')['default']
     SvgIcon: typeof import('./components/svg-icon/index.vue')['default']
+    TableBody: typeof import('./components/song-table/TableBody.vue')['default']
+    TableFooter: typeof import('./components/song-table/TableFooter.vue')['default']
+    TableHeader: typeof import('./components/song-table/TableHeader.vue')['default']
     TabNav: typeof import('./components/tab-nav/index.vue')['default']
   }
 }

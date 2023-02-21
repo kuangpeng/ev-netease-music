@@ -29,17 +29,12 @@ export default defineConfig({
       vue(),
       AutoImport({
         eslintrc: {
-          enabled: true,
+          enabled: true
         },
         imports: [
           'vue',
           {
-            'naive-ui': [
-              'useDialog',
-              'useMessage',
-              'useNotification',
-              'useLoadingBar'
-            ]
+            'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar']
           }
         ],
         dirs: ['./src/renderer/'],
@@ -51,7 +46,7 @@ export default defineConfig({
       }),
       createSvgIconsPlugin({
         // Specify the icon folder to be cached
-        iconDirs: [ resolve(process.cwd(), './src/renderer/src/icons/svg') ],
+        iconDirs: [resolve(process.cwd(), './src/renderer/src/icons/svg')],
         // Specify symbolId format
         symbolId: 'icon-[dir]-[name]',
 
@@ -65,13 +60,11 @@ export default defineConfig({
          * custom dom id
          * @default: __svg__icons__dom__
          */
-        customDomId: '__svg__icons__dom__',
+        customDomId: '__svg__icons__dom__'
       }),
       UnoCSS({
-        presets: [
-          presetUno()
-        ],
-      }),
+        presets: [presetUno()]
+      })
     ]
   }
 })

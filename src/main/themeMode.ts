@@ -1,4 +1,4 @@
-import { IpcMain, NativeTheme } from "electron"
+import { IpcMain, NativeTheme } from 'electron'
 
 export default function themeMode(ipcMain: IpcMain, nativeTheme: NativeTheme): void {
   ipcMain.handle('dark-mode:toggle', () => {

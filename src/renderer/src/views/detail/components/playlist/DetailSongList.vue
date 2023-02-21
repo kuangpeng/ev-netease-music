@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="warn-tip">
-      <div class="text-2 color-gray-600 mx-8">含1首VIP专享歌曲&nbsp;&nbsp;<router-link class="link" to="/">立即开通&gt;</router-link></div>
+      <div class="text-2 color-gray-600 mx-8">
+        含1首VIP专享歌曲&nbsp;&nbsp;<router-link class="link" to="/">立即开通&gt;</router-link>
+      </div>
     </div>
 
     <!-- <song-table-list :list="songList" /> -->
@@ -50,21 +52,23 @@ const params = {
 
 const songList = ref<Track[]>([])
 
-const fetchTrackList = useFetchList<typeof playlist.getPlayListTrackAll>(playlist.getPlayListTrackAll)
+const fetchTrackList = useFetchList<typeof playlist.getPlayListTrackAll>(
+  playlist.getPlayListTrackAll
+)
 
 const { onResult: onTrackResult, onError: onTrackError } = fetchTrackList(params)
 
-onTrackResult(res => {
+onTrackResult((res) => {
   songList.value = res.songs
 })
 
-onTrackError(err => {
+onTrackError((err) => {
   console.log(err)
 })
 </script>
 
 <style lang="less" scoped>
-.warn-tip{
+.warn-tip {
   padding: 7px 0;
   background-color: #ffe3d6;
 }

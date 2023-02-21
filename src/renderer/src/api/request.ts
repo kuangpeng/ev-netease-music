@@ -1,10 +1,5 @@
 import axios from 'axios'
-import type {
-  AxiosRequestConfig,
-  AxiosError,
-  AxiosResponse,
-  AxiosInstance
-} from 'axios'
+import type { AxiosRequestConfig, AxiosError, AxiosResponse, AxiosInstance } from 'axios'
 import qs from 'qs'
 // 提示语功能引入
 // import { Toast } from 'vant'
@@ -17,7 +12,7 @@ import qs from 'qs'
 // }
 
 type BaseResponse = {
-  code: number;
+  code: number
 }
 
 type HttpRequestMethod = <T>(url: string, data?: unknown) => Promise<T & BaseResponse>
@@ -93,7 +88,6 @@ const interceptorsResponse = {
       // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
       if (!window.navigator.onLine) {
         // 断网处理
-
       }
       return Promise.reject(error)
     }
@@ -101,45 +95,56 @@ const interceptorsResponse = {
 }
 
 const Get = (service: AxiosInstance): HttpRequestMethod => {
-  return (url, data) => service({
-    url,
-    method: 'get',
-    params: data
-  })
+  return (url, data) =>
+    service({
+      url,
+      method: 'get',
+      params: data
+    })
 }
 
-const Post = (service: AxiosInstance): HttpRequestMethod=> {
-  return (url, data) => service({
-    url,
-    method: 'post',
-    data
-  })
+const Post = (service: AxiosInstance): HttpRequestMethod => {
+  return (url, data) =>
+    service({
+      url,
+      method: 'post',
+      data
+    })
 }
 
 const PostForm = (service: AxiosInstance): HttpRequestMethod => {
-  return (url, data) => service({
-    url,
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    data: qs.stringify(data)
-  })
+  return (url, data) =>
+    service({
+      url,
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: qs.stringify(data)
+    })
 }
 
 // 请求模块生成函数，根据不同配置生成不同axios实体
-const request = (config: AxiosRequestConfig): {
-  Get: HttpRequestMethod;
-  Post: HttpRequestMethod;
-  PostForm: HttpRequestMethod;
+const request = (
+  config: AxiosRequestConfig
+): {
+  Get: HttpRequestMethod
+  Post: HttpRequestMethod
+  PostForm: HttpRequestMethod
 } => {
   const baseConfig = {
     baseURL: '',
     timeout: 5 * 1000
   }
   const instance = axios.create(Object.assign({}, baseConfig, config))
-  instance.interceptors.request.use(interceptorsRequest.onFullfilled, interceptorsRequest.onRejected)
-  instance.interceptors.response.use(interceptorsResponse.onFullfilled, interceptorsResponse.onRejected)
+  instance.interceptors.request.use(
+    interceptorsRequest.onFullfilled,
+    interceptorsRequest.onRejected
+  )
+  instance.interceptors.response.use(
+    interceptorsResponse.onFullfilled,
+    interceptorsResponse.onRejected
+  )
 
   return {
     Get: Get(instance),

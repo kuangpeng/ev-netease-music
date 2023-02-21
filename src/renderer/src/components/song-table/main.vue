@@ -5,7 +5,7 @@
       <table-header :columns="columns" :data="data" />
     </div>
     <div class="table-body-wrap">
-      <table-body :data=data />
+      <table-body :data="data" />
     </div>
     <div class="table-footer-wrap">
       <table-footer />
@@ -20,10 +20,10 @@ import TableFooter from './TableFooter.vue'
 import type { TableColumn, TableInjectKey } from './table-types'
 
 export interface Props {
-  data: Array<unknown>;
-  columns: TableColumn[];
-  loading: boolean;
-  striped: boolean;
+  data: Array<unknown>
+  columns: TableColumn[]
+  loading: boolean
+  striped: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -40,7 +40,7 @@ provide<TableInjectKey>('song-table', {
 </script>
 
 <style lang="less" scoped>
-.song-table{
+.song-table {
   min-height: 100px;
 }
 </style>

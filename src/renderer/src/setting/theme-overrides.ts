@@ -1,10 +1,8 @@
-import { GlobalThemeOverrides,
-  SliderProps,
-  DataTableProps,
-  DrawerProps
-} from 'naive-ui'
+import { GlobalThemeOverrides, SliderProps, DataTableProps, DrawerProps } from 'naive-ui'
 
-function getModuleThemeOverride(m: keyof GlobalThemeOverrides): GlobalThemeOverrides[keyof GlobalThemeOverrides] {
+function getModuleThemeOverride(
+  m: keyof GlobalThemeOverrides
+): GlobalThemeOverrides[keyof GlobalThemeOverrides] {
   // TODO theme
   // const themeMode: 'light' | 'dark' =  (window.appSets.darkMode == 'system' ? 'light' : window.appSets.darkMode) || 'light'
   const themeMode = 'light'

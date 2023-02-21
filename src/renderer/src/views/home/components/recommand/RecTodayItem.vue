@@ -22,14 +22,14 @@ import CalendarClearOutline from '@vicons/ionicons5/CalendarClearOutline'
 </script>
 
 <style lang="less" scoped>
-.cover{
+.cover {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url("@renderer/assets/images/cover-today.jpg") no-repeat center;
+  background: url('@renderer/assets/images/cover-today.jpg') no-repeat center;
   background-size: 100% 100%;
 
-  .date{
+  .date {
     width: 100%;
     height: 100%;
     display: flex;
@@ -40,7 +40,7 @@ import CalendarClearOutline from '@vicons/ionicons5/CalendarClearOutline'
     -webkit-backdrop-filter: blur(3px) brightness(70%);
     backdrop-filter: blur(3px) brightness(70%);
 
-    span{
+    span {
       position: absolute;
       left: 50%;
       top: 50%;

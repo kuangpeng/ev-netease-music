@@ -1,13 +1,7 @@
 <template>
-  <div>
-Collector
-  </div>
+  <div>Collector</div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

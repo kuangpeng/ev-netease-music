@@ -9,7 +9,7 @@
           :link="'/playlist/' + item.id"
           :play-count="item.commentCount"
           :creator="item.creator"
-          :showAuthor="true"
+          :show-author="true"
         />
       </n-gi>
     </n-grid>
@@ -24,6 +24,4 @@ defineProps<{
 }>()
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

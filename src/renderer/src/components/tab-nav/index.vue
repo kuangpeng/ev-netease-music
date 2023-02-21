@@ -7,7 +7,13 @@
             <router-link v-if="n.link" :to="n.link">
               <span>{{ n.title }}</span>
             </router-link>
-            <a v-if="n.value" href="javascript:;" class="tab-link" :class="{active: index == currentTabIndex }" @click="handleClick(n, index)">
+            <a
+              v-if="n.value"
+              href="javascript:;"
+              class="tab-link"
+              :class="{ active: index == currentTabIndex }"
+              @click="handleClick(n, index)"
+            >
               <span>{{ n.title }}</span>
             </a>
           </li>
@@ -23,11 +29,11 @@ import { useRouter } from 'vue-router'
 
 export interface Props {
   navs: Array<{
-    title: string;
-    link?: RouteLocationRaw;
-    value?: string;
-  }>;
-  size?: number;
+    title: string
+    link?: RouteLocationRaw
+    value?: string
+  }>
+  size?: number
 }
 
 const router = useRouter()
@@ -58,37 +64,36 @@ const style = computed(() => {
   }
   return style
 })
-
 </script>
 
 <style lang="less" scoped>
-.tab-nav{
+.tab-nav {
   width: 100%;
   display: flex;
   align-items: center;
   height: 60px;
   background-color: #fff;
 
-  ul{
+  ul {
     display: flex;
     // font-size: 16px;
     align-items: top;
 
-    li{
+    li {
       margin-right: 22px;
 
-      a{
+      a {
         display: block;
         position: relative;
         color: var(--text-color-1);
         line-height: 1;
 
-        &.router-link-active{
+        &.router-link-active {
           font-size: 1.2em;
           font-weight: bold;
           padding-bottom: 8px;
 
-          &::after{
+          &::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -102,12 +107,12 @@ const style = computed(() => {
         }
       }
 
-      a.tab-link.active{
+      a.tab-link.active {
         font-size: 1.2em;
         font-weight: bold;
         padding-bottom: 8px;
 
-        &::after{
+        &::after {
           content: '';
           position: absolute;
           bottom: 0;

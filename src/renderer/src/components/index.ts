@@ -28,7 +28,7 @@ export function registerComponents(app: App): void {
   const components = import.meta.glob('./**/index.vue', { eager: true })
   Object.keys(components).forEach((it: string) => {
     // @ts-ignore (define in dts)
-    const cname = (components[it]).default.name || toHump(getComponentName(it))
+    const cname = components[it].default.name || toHump(getComponentName(it))
     // @ts-ignore (define in dts)
     app.component(cname, components[it].default)
   })

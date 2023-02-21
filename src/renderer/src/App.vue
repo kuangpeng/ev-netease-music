@@ -8,11 +8,13 @@ const theme = ref<GlobalTheme | null>(null)
 </script>
 
 <template>
-  <n-config-provider abstract :theme="theme" :theme-overrides="theme === null ? lightThemeOverrides : darkThemeOverrides">
+  <n-config-provider
+    abstract
+    :theme="theme"
+    :theme-overrides="theme === null ? lightThemeOverrides : darkThemeOverrides"
+  >
     <app-layout />
   </n-config-provider>
 </template>
 
-<style lang="less">
-
-</style>
+<style lang="less"></style>

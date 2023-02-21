@@ -14,7 +14,7 @@ import TopControlWindow from './TopControlWindow.vue'
 </script>
 
 <style lang="less" scoped>
-.control-wrap{
+.control-wrap {
   color: var(--base-color);
 }
 </style>

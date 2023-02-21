@@ -9,16 +9,14 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="less" scoped>
-.inner-nav-layout{
+.inner-nav-layout {
   position: relative;
   padding: 60px 30px 0;
 
-  .inner-nav{
+  .inner-nav {
     position: fixed;
     top: var(--app-topbar-height);
     left: var(--app-siderbar-width);

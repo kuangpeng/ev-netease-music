@@ -11,7 +11,11 @@
     :style="playlistStyle"
     :theme-overrides="appOverride.playList.Drawer"
   >
-    <n-drawer-content :header-style="playlistHeaderStyle" :native-scrollbar="false" :scrollbar-props="{trigger: 'none'}">
+    <n-drawer-content
+      :header-style="playlistHeaderStyle"
+      :native-scrollbar="false"
+      :scrollbar-props="{ trigger: 'none' }"
+    >
       <template #header>
         <div class="playlist-header">
           <div class="text-xl font-700">当前播放</div>
@@ -56,12 +60,12 @@ const playlistHeaderStyle = {
 </script>
 
 <style lang="less" scoped>
-.playlist-header{
+.playlist-header {
   // padding-top: 16px;
   // padding-bottom: 5px;
   // border-bottom: 1px solid var(--border-color);
 }
-.playlist-body{
+.playlist-body {
   margin-left: -20px;
   margin-right: -20px;
 }

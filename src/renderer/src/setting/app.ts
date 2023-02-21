@@ -93,7 +93,7 @@ export const AppNavs = {
       title: '最新音乐',
       link: '/home/newest',
       icon: ''
-    },
+    }
   ]
 }
 
@@ -122,7 +122,7 @@ export const Categories = [
     name: '主题',
     icon: 'module',
     category: 4
-  },
+  }
 ]
 
 export const AppSetting = {

@@ -1,9 +1,7 @@
 <template>
   <div class="song-set">
     <n-space :wrap-item="false" :size="[20, 0]" justify="end">
-      <n-button type="error" ghost size="tiny">
-        标准
-      </n-button>
+      <n-button type="error" ghost size="tiny"> 标准 </n-button>
       <n-popover trigger="hover" style="padding: var(--app-pop-pad-small)">
         <template #trigger>
           <n-button text>
@@ -15,13 +13,14 @@
           </n-button>
         </template>
         <div>
-          <n-slider v-model:value="volume"
+          <n-slider
+            v-model:value="volume"
             :max="100"
             :tooltip="false"
             vertical
             :theme-overrides="appOverride.appControl.Slider"
-            style="height: 80px;"
-            >
+            style="height: 80px"
+          >
           </n-slider>
         </div>
       </n-popover>
@@ -31,7 +30,6 @@
         </template>
       </n-button>
     </n-space>
-
   </div>
 </template>
 
@@ -43,7 +41,7 @@ const volume = ref(50)
 </script>
 
 <style lang="less" scoped>
-.song-set{
+.song-set {
   display: flex;
   justify-content: flex-end;
   align-items: center;

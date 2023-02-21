@@ -33,9 +33,7 @@ export default ({ options, store }: PiniaPluginContext): void => {
     // 恢复状态
     if (presist.resetToState) {
       if (typeof presist.resetToState === 'boolean') {
-        const json = (window)[presist.option?.storage + 'Storage'].getItem(
-          presist.option?.key
-        )
+        const json = window[presist.option?.storage + 'Storage'].getItem(presist.option?.key)
         if (json) {
           store.$patch(JSON.parse(json))
         }
@@ -58,7 +56,7 @@ export default ({ options, store }: PiniaPluginContext): void => {
             }
           })
         }
-        ;(window)[storage + 'Storage'].setItem(key, JSON.stringify(toPersistObj))
+        window[storage + 'Storage'].setItem(key, JSON.stringify(toPersistObj))
       },
       { detached: true }
     )

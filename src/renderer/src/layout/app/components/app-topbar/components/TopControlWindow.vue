@@ -23,7 +23,7 @@ import Crop75Filled from '@vicons/material/Crop75Filled'
 </script>
 
 <style lang="less" scoped>
-.window-action{
+.window-action {
   color: #fff;
   padding-right: 25px;
 }

@@ -1,10 +1,13 @@
 <template>
   <div v-show="isShow" class="hq-section" @click="handleToHQ">
-    <div class="bg" :style="{backgroundImage: `url(${hqsheetItem?.coverImgUrl}?param=1000)`}"></div>
+    <div
+      class="bg"
+      :style="{ backgroundImage: `url(${hqsheetItem?.coverImgUrl}?param=1000)` }"
+    ></div>
     <div class="hq-main">
       <n-space type="flex" justify="start" align="start" :size="[20, 0]">
         <div class="cover">
-          <img :src="hqsheetItem?.coverImgUrl + '?param=140y140'" :alt="hqsheetItem?.name">
+          <img :src="hqsheetItem?.coverImgUrl + '?param=140y140'" :alt="hqsheetItem?.name" />
         </div>
         <div class="info">
           <div class="tag">
@@ -29,14 +32,14 @@ const router = useRouter()
 const playlistStore = usePlaylistStore()
 
 const props = defineProps<{
-  name: string;
+  name: string
 }>()
 
 const hqsheetItem = ref<PlayListItem | null>(null)
 
 const hqTag = computed(() => {
   if (props.name == '全部歌单') return playlistStore.highQualityTags[0]
-  const s = playlistStore.highQualityTags.filter(t => t.name === props.name)
+  const s = playlistStore.highQualityTags.filter((t) => t.name === props.name)
   return s ? s[0] : null
 })
 
@@ -50,29 +53,31 @@ const handleToHQ = () => {
 
 watchEffect(() => {
   if (hqTag.value) {
-    playlist.getHighqualityList({
-      cat: hqTag.value.name,
-      limit: 1
-    }).then( res => {
-      hqsheetItem.value = res.playlists[0] ? res.playlists[0] : null
-    })
+    playlist
+      .getHighqualityList({
+        cat: hqTag.value.name,
+        limit: 1
+      })
+      .then((res) => {
+        hqsheetItem.value = res.playlists[0] ? res.playlists[0] : null
+      })
   }
 })
 </script>
 
 <style lang="less" scoped>
-.hq-section{
+.hq-section {
   position: relative;
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
   cursor: pointer;
 
-  .bg{
+  .bg {
     position: absolute;
     top: -15%;
     left: -15%;
-    z-index:0;
+    z-index: 0;
     width: 130%;
     height: 130%;
     background-position: center;
@@ -81,21 +86,21 @@ watchEffect(() => {
     filter: blur(50px);
   }
 
-  .hq-main{
+  .hq-main {
     position: relative;
     z-index: 1;
     padding: 15px;
   }
-  .cover{
+  .cover {
     width: 140px;
     height: 140px;
     border-radius: 5px;
     overflow: hidden;
   }
-  .info{
+  .info {
     padding-top: 20px;
 
-    .tag{
+    .tag {
       display: inline-flex;
       justify-content: space-around;
       align-items: center;
@@ -106,11 +111,11 @@ watchEffect(() => {
       color: #e7aa5a;
       line-height: 1;
 
-      span{
+      span {
         margin-left: 5px;
       }
     }
-    .name{
+    .name {
       margin-top: 25px;
       color: #fff;
     }

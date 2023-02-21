@@ -1,10 +1,7 @@
 <template>
-  <n-space class="song-card" align=center :wrap-item="false" :size="[12, 0]">
+  <n-space class="song-card" align="center" :wrap-item="false" :size="[12, 0]">
     <div class="cover" @click="handleClickShow">
-      <n-image
-        width="48"
-        src="https://www.runoob.com/try/demo_source/pineapple.jpg"
-      />
+      <n-image width="48" src="https://www.runoob.com/try/demo_source/pineapple.jpg" />
       <div class="toggler flex-middle">
         <n-icon size="22" :component="ChevronUp48Regular" color="#fff" depth="1" />
       </div>
@@ -18,12 +15,9 @@
           <n-icon size="23" :component="IosHeartEmpty" depth="3" />
         </n-button>
       </div>
-      <div class="detail-bottom">
-        它有不同的
-      </div>
+      <div class="detail-bottom">它有不同的</div>
     </div>
   </n-space>
-
 </template>
 
 <script setup lang="ts">
@@ -40,11 +34,11 @@ const handleClickShow = (): void => {
 </script>
 
 <style lang="less" scoped>
-.song-card{
+.song-card {
   height: var(--app-bottombar-height);
   padding-left: 12px;
 
-  .cover{
+  .cover {
     position: relative;
     cursor: pointer;
     z-index: 1;
@@ -52,7 +46,7 @@ const handleClickShow = (): void => {
     height: 48px;
     overflow: hidden;
     border-radius: 4px;
-    .toggler{
+    .toggler {
       display: none;
       position: absolute;
       z-index: 2;
@@ -70,26 +64,26 @@ const handleClickShow = (): void => {
       justify-content: center;
     }
 
-    &:hover{
-      .toggler{
+    &:hover {
+      .toggler {
         display: flex;
       }
     }
   }
-  .detail{
-    .detail-up{
+  .detail {
+    .detail-up {
       padding-top: 3px;
       height: 20px;
       margin-bottom: 5px;
     }
-    .song-name{
+    .song-name {
       display: inline-block;
       max-width: 150px;
       height: 20px;
       overflow: hidden;
       white-space: nowrap;
     }
-    .tag_VIP{
+    .tag_VIP {
       font-size: 10px;
       padding: 1px 2px;
       line-height: 1;
@@ -98,7 +92,7 @@ const handleClickShow = (): void => {
       color: var(--warning-color);
       margin: 0 3px;
     }
-    .tag_ST{
+    .tag_ST {
       font-size: 10px;
       padding: 1px 2px;
       line-height: 1;
@@ -107,7 +101,7 @@ const handleClickShow = (): void => {
       color: var(--error-color);
       margin: 0 3px;
     }
-    .detail-bottom{
+    .detail-bottom {
       font-size: 0.85em;
     }
   }

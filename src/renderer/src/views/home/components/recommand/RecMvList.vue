@@ -5,7 +5,7 @@
         <n-gi v-for="(item, index) in recMvList" :key="index" class="mv-gi-item">
           <n-space type="flex" :vertical="true" align="start" :size="[0, 10]">
             <div class="mv-cover" @click="handleClick(item.id)">
-              <img :src="item.picUrl + '?param=260y145'" alt="">
+              <img :src="item.picUrl + '?param=260y145'" alt="" />
               <div class="top-num">
                 <n-space type="flex" justify="end">
                   <n-space type="flex" align="center" :size="[1, 0]" :wrap-item="false">
@@ -58,7 +58,7 @@ const handleClick = (id: number) => {
 </script>
 
 <style lang="less" scoped>
-.mv-cover{
+.mv-cover {
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -69,7 +69,7 @@ const handleClick = (id: number) => {
   font-size: 12px;
   color: #fff;
 
-  .top-num{
+  .top-num {
     position: absolute;
     width: 100%;
     top: 0;
@@ -78,16 +78,16 @@ const handleClick = (id: number) => {
     font-size: 0.8em;
     opacity: 1;
 
-    transition: opacity .1s .3s;
+    transition: opacity 0.1s 0.3s;
   }
 
-  .top-intro{
+  .top-intro {
     position: absolute;
     z-index: 2;
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
     font-size: 0;
     color: #fff;
     padding: 10px 5px;
@@ -95,39 +95,39 @@ const handleClick = (id: number) => {
     line-height: 1;
     transform: translateY(-110%);
 
-    transition: all .5s .3s;
+    transition: all 0.5s 0.3s;
 
-    span{
+    span {
       font-size: 0.8em;
     }
   }
 }
-.mv-info{
+.mv-info {
   font-size: 14px;
 
-  .name{
-    a{
+  .name {
+    a {
       display: block;
       font-size: 1em;
       color: #333;
       line-height: 1;
 
-      &:hover{
+      &:hover {
         color: #000;
       }
     }
   }
-  .artists{
+  .artists {
     font-size: 0.8em;
     color: #666;
   }
 }
 
-.mv-cover:hover{
-  .top-num{
+.mv-cover:hover {
+  .top-num {
     opacity: 0;
   }
-  .top-intro{
+  .top-intro {
     transform: translateY(0);
   }
 }

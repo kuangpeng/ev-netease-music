@@ -1,14 +1,14 @@
-import type { Track } from '@renderer/types/playlist';
+import type { Track } from '@renderer/types/playlist'
 import { Http } from '../base'
 
 const http = Http()
 
 interface ResultSongDetail {
-  songs: Track[];
+  songs: Track[]
 }
 
 const song = {
-  getSongDetail (params: { ids: string }) {
+  getSongDetail(params: { ids: string }) {
     return http.Get<ResultSongDetail>('/song/detail', params)
   }
 }

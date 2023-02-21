@@ -13,22 +13,21 @@
       <slot name="right" />
     </div>
   </n-space>
-
 </template>
 
 <script setup lang="ts">
 import ArrowForwardIosFilled from '@vicons/material/ArrowForwardIosFilled'
 
 export interface BlockTitle {
-  title: string;
-  link?: string;
+  title: string
+  link?: string
   'on-click': () => void
 }
 
 const props = defineProps<BlockTitle>()
 
 const handleClick = (): void => {
-  if (props.link) return;
+  if (props.link) return
   if (props['on-click']) {
     props['on-click']()
   }
@@ -36,11 +35,11 @@ const handleClick = (): void => {
 </script>
 
 <style lang="less" scoped>
-.title{
+.title {
   font-size: 20px;
   font-weight: bold;
 
-  .link-wrap{
+  .link-wrap {
     display: inline-flex;
     align-items: center;
     height: 30px;
@@ -48,16 +47,16 @@ const handleClick = (): void => {
     line-height: 1;
     white-space: nowrap;
   }
-  a{
+  a {
     display: inline-block;
     line-height: 1.5;
     color: #333;
 
-    &:hover{
+    &:hover {
       color: #000;
     }
   }
-  .n-icon{
+  .n-icon {
     margin-top: -3px;
   }
 }

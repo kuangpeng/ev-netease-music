@@ -14,14 +14,14 @@ import IosSearch from '@vicons/ionicons4/IosSearch'
 </script>
 
 <style lang="less" scoped>
-.search-input{
-  background-color: rgba(0, 0, 0, .05);
+.search-input {
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   padding-left: 10px;
   padding-right: 10px;
   overflow: hidden;
 }
-.inputer{
+.inputer {
   width: 125px;
   height: 32px;
   line-height: 33px;
@@ -30,11 +30,11 @@ import IosSearch from '@vicons/ionicons4/IosSearch'
   color: var(--input-color);
   font-size: 13px;
 
-  &::placeholder{
-    color: rgba(255, 255, 255, .4);
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.4);
   }
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }

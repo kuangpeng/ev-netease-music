@@ -35,7 +35,7 @@ const createColumns = (): DataTableColumns<Track> => {
       key: 'id',
       width: 50,
       align: 'right',
-      render: (row, index) => (index + 1)
+      render: (row, index) => index + 1
     },
     {
       title: '操作',
@@ -60,11 +60,15 @@ const createColumns = (): DataTableColumns<Track> => {
       key: 'ar',
       resizable: true,
       render: (_) => {
-        const childs = _.ar.map(a => {
-          return h(RouterLink, { to: { path: '/singer', params: { id: a.id }}, class: 'text-author'}, a.name)
+        const childs = _.ar.map((a) => {
+          return h(
+            RouterLink,
+            { to: { path: '/singer', params: { id: a.id } }, class: 'text-author' },
+            a.name
+          )
         })
         const html: VNode[] = []
-        for(let i = 0; i < childs.length; i++) {
+        for (let i = 0; i < childs.length; i++) {
           if (i > 0) {
             html.push(h('span', '/'))
           }
@@ -81,7 +85,7 @@ const createColumns = (): DataTableColumns<Track> => {
       key: 'al.name',
       resizable: true,
       sortOrder: false,
-      sorter: 'default',
+      sorter: 'default'
     },
     {
       title: '时间',
@@ -100,17 +104,18 @@ const loading = ref(true)
 
 const columns = createColumns()
 
-watch(() => props.list, (nv) => {
-  if (nv && nv.length > 0) {
-    loading.value = false
+watch(
+  () => props.list,
+  (nv) => {
+    if (nv && nv.length > 0) {
+      loading.value = false
+    }
   }
-})
+)
 
 const handleSorterChange = (sorter) => {
   console.log(sorter)
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

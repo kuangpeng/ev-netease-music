@@ -14,7 +14,9 @@
       <n-carousel-item v-for="(item, index) in carouselList" :key="index" :style="{ width: '50%' }">
         <div class="carousel-item" @click="handleClick(index)">
           <img :src="item.imageUrl + '?param=540y200'" />
-          <span class="type" :style="{ backgroundColor: item.titleColor }">{{ item.typeTitle }}</span>
+          <span class="type" :style="{ backgroundColor: item.titleColor }">{{
+            item.typeTitle
+          }}</span>
         </div>
       </n-carousel-item>
     </n-carousel>
@@ -32,7 +34,12 @@
     </div>
     <n-el>
       <div class="carousel-dots">
-        <span v-for="index in carouselList.length" :key="index" :class="{ active: (index - 1) == carouselIndex }" @click="handleChangeSlide(index - 1)"></span>
+        <span
+          v-for="index in carouselList.length"
+          :key="index"
+          :class="{ active: index - 1 == carouselIndex }"
+          @click="handleChangeSlide(index - 1)"
+        ></span>
       </div>
     </n-el>
   </div>
@@ -86,18 +93,18 @@ const handleClick = (index: number): void => {
 </script>
 
 <style lang="less" scoped>
-.carousel:hover{
-  .carousel-arrows{
+.carousel:hover {
+  .carousel-arrows {
     display: block;
   }
 }
-.carousel-item{
+.carousel-item {
   position: relative;
   height: 100%;
   border-radius: 8px;
   overflow: hidden;
 
-  img{
+  img {
     margin: 0 auto;
     width: 100%;
     height: 100%;
@@ -105,7 +112,7 @@ const handleClick = (index: number): void => {
     object-fit: cover;
   }
 
-  .type{
+  .type {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -115,12 +122,12 @@ const handleClick = (index: number): void => {
     font-size: 0.8em;
   }
 }
-.carousel-dots{
+.carousel-dots {
   display: flex;
   justify-content: center;
   margin-top: 14px;
 
-  span{
+  span {
     display: block;
     width: 6px;
     height: 6px;
@@ -129,46 +136,46 @@ const handleClick = (index: number): void => {
     margin: 0 5px;
     cursor: pointer;
 
-    &.active{
+    &.active {
       background-color: var(--primary-color);
     }
   }
 }
-.carousel-arrows{
+.carousel-arrows {
   display: none;
   position: relative;
   z-index: 3;
   width: 100%;
 
-  .arrow{
+  .arrow {
     position: absolute;
     top: -115px;
 
-    span{
+    span {
       display: inline-flex;
       justify-content: center;
       align-items: center;
       padding: 5px;
-      background-color: rgba(0, 0, 0, .2);
+      background-color: rgba(0, 0, 0, 0.2);
       border-radius: 50%;
       color: #fff;
       font-size: 18px;
       transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
 
-      &:hover{
+      &:hover {
         background-color: rgba(0, 0, 0, 0.5);
       }
     }
   }
-  .arrow-left{
+  .arrow-left {
     left: 10px;
   }
-  .arrow-right{
+  .arrow-right {
     right: 10px;
   }
 }
-.n-carousel__slide--current{
+.n-carousel__slide--current {
   cursor: pointer;
 }
 </style>

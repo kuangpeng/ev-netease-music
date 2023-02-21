@@ -6,10 +6,7 @@ import home from './routes/home'
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [
-    ...index,
-    ...home
-  ]
+  routes: [...index, ...home]
 })
 
 export function useAppRouter(app: App): void {

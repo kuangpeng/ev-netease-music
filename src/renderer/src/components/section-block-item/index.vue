@@ -3,7 +3,7 @@
     <div class="item-cover-wrap" @click="handleDetail">
       <slot name="cover">
         <div class="item-cover">
-          <img :src="cover" alt="">
+          <img :src="cover" alt="" />
         </div>
       </slot>
       <div v-if="intro" class="top-intro">{{ intro }}</div>
@@ -21,7 +21,14 @@
         <slot name="bottom">
           <n-space type="flex" justify="space-between" align="end" :wrap-item="false">
             <div class="author">
-              <n-space v-if="showAuthor" type="flex" justify="start" align="center" :size="[2, 0]" :wrap-item="false">
+              <n-space
+                v-if="showAuthor"
+                type="flex"
+                justify="start"
+                align="center"
+                :size="[2, 0]"
+                :wrap-item="false"
+              >
                 <n-icon size="14" :component="MdContact" />
                 <span>{{ creator?.nickname }}</span>
                 <!-- <n-icon size="14" :component="MdContact" /> -->
@@ -53,16 +60,16 @@ import { numberFormat } from '@renderer/utils/utils'
 import type { Creator } from '@renderer/types/playlist'
 
 export interface Props {
-  showTop?: boolean;
-  showBottom?: boolean;
-  showAuthor?: boolean;
-  intro?: string;
-  cover?: string;
-  title: string;
-  link: string;
-  id?: number;
-  playCount?: number;
-  creator?: Creator;
+  showTop?: boolean
+  showBottom?: boolean
+  showAuthor?: boolean
+  intro?: string
+  cover?: string
+  title: string
+  link: string
+  id?: number
+  playCount?: number
+  creator?: Creator
 }
 
 const router = useRouter()
@@ -95,11 +102,10 @@ const handlePlay = (id: number) => {
 </script>
 
 <style lang="less" scoped>
-.block-item-wrap{
+.block-item-wrap {
   font-size: 14px;
-
 }
-.item-cover-wrap{
+.item-cover-wrap {
   cursor: pointer;
   position: relative;
   z-index: 1;
@@ -108,30 +114,30 @@ const handlePlay = (id: number) => {
   height: 206px;
   border-radius: 6px;
 
-  .item-cover{
-    img{
+  .item-cover {
+    img {
       width: 206px;
       height: 206px;
     }
   }
 
-  .top-intro{
+  .top-intro {
     position: absolute;
     z-index: 2;
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.5);
     font-size: 0.8em;
     color: #fff;
     padding: 8px 5px;
     line-height: 1;
     transform: translateY(-110%);
 
-    transition: all .5s .3s;
+    transition: all 0.5s 0.3s;
   }
 
-  .pos-top{
+  .pos-top {
     position: absolute;
     z-index: 1;
     // width: 100%;
@@ -142,7 +148,7 @@ const handlePlay = (id: number) => {
     font-size: 0.8em;
     line-height: 1;
   }
-  .pos-bottom{
+  .pos-bottom {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -153,41 +159,41 @@ const handlePlay = (id: number) => {
     font-size: 0.8em;
   }
 }
-.item-title{
+.item-title {
   margin-top: 8px;
   height: 40px;
   font-size: 1em;
   line-height: 1.5;
 
-  a{
+  a {
     color: #666;
 
-    &:hover{
+    &:hover {
       color: #333;
     }
   }
 }
 
-.btn-play{
+.btn-play {
   // display: none;
   cursor: pointer;
   padding: 7px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 0;
   color: var(--primary-color);
   line-height: 1;
   overflow: hidden;
-  transition: opacity .35s;
+  transition: opacity 0.35s;
   opacity: 0;
 }
 
-.item-cover-wrap:hover{
-  .top-intro{
+.item-cover-wrap:hover {
+  .top-intro {
     transform: translateY(0);
   }
 
-  .btn-play{
+  .btn-play {
     // display: block;
     opacity: 1;
   }

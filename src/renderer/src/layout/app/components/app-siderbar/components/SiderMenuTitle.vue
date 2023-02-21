@@ -15,7 +15,7 @@ defineProps({
 </script>
 
 <style lang="less" scoped>
-.menu-section-title{
+.menu-section-title {
   font-size: 0.9em;
   margin-bottom: 8px;
 }

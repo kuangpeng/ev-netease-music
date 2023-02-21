@@ -30,7 +30,6 @@
       </n-button>
     </n-space>
   </n-space>
-
 </template>
 
 <script setup lang="ts">
@@ -49,7 +48,7 @@ const handclickHide = (): void => {
 </script>
 
 <style lang="less" scoped>
-.song-favor{
+.song-favor {
   height: var(--app-bottombar-height);
   padding-left: 20px;
 }

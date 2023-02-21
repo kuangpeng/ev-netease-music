@@ -5,19 +5,19 @@ interface BannerResult {
   banners: Banner[]
 }
 interface RecListToday {
-  hasTaste: boolean,
-  category: number,
+  hasTaste: boolean
+  category: number
   result: RecListItem[]
 }
 
 interface NewSong {
-  result: RecNewSong[];
-  category: number;
+  result: RecNewSong[]
+  category: number
 }
 
 interface NewMV {
-  result: RecNewMV[];
-  category: number;
+  result: RecNewMV[]
+  category: number
 }
 
 const http = Http()

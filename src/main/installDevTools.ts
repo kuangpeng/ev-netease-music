@@ -8,7 +8,7 @@ const vueDevToolsPath = path.join(
   '/AppData/Local/Microsoft/Edge/User Data/Default/Extensions/olofadcdnkkjdfgjcmjaadnlehnnihnl/6.4.5_0'
 )
 
-function installDevTools (): Promise<Extension> {
+function installDevTools(): Promise<Extension> {
   return session.defaultSession.loadExtension(vueDevToolsPath)
 }
 

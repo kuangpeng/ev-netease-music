@@ -1,6 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
 
-
 const index: RouteRecordRaw[] = [
   {
     path: '/',
@@ -29,6 +28,6 @@ const index: RouteRecordRaw[] = [
   {
     path: '/singer/:id',
     component: () => import('@renderer/views/detail/singerDetail.vue')
-  },
+  }
 ]
 export default index

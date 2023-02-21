@@ -12,7 +12,6 @@
           :link="'/playlist/' + item.id"
           :play-count="item.playCount"
         />
-
       </n-gi>
     </n-grid>
   </section-list>
@@ -28,6 +27,4 @@ defineProps<{
 }>()
 </script>
 
-<style lang="less" scoped>
-
-</style>
+<style lang="less" scoped></style>

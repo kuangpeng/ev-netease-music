@@ -6,9 +6,9 @@
 
 <script setup lang="ts">
 export interface Props {
-  prefix?: string;
-  name: string;
-  color?: string;
+  prefix?: string
+  name: string
+  color?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 
-const iconName = computed(() =>  `#icon-${props.name}` )
+const iconName = computed(() => `#icon-${props.name}`)
 
 const svgClass = computed(() => {
   if (props.name) {
@@ -40,7 +40,7 @@ const svgClass = computed(() => {
 
 .svg-external-icon {
   background-color: currentColor;
-  mask-size: cover!important;
+  mask-size: cover !important;
   display: inline-block;
 }
 </style>

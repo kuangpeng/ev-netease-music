@@ -17,7 +17,7 @@
             <n-icon size="10" color="var(--primary-color)" :component="IosPlay" />
           </td>
           <td title="树的树的第一树的第一树的第一树的第一第一">
-            <n-ellipsis :tooltip="false" style="max-width: 160px;">
+            <n-ellipsis :tooltip="false" style="max-width: 160px">
               <n-text>树的树一第一</n-text>&nbsp;
               <n-text depth="3">test</n-text>
             </n-ellipsis>
@@ -54,28 +54,25 @@ import IosPlay from '@vicons/ionicons4/IosPlay'
 //     required: true
 //   }
 // })
-
 </script>
 
 <style lang="less" scoped>
-.song-list-simple{
-
-  &>div:nth-child(2n+1) {
+.song-list-simple {
+  & > div:nth-child(2n + 1) {
     background-color: #fafafa;
   }
 
-
   table {
     thead {
-      th{
+      th {
         padding: 0;
         background: none;
         border: none;
       }
     }
-    tbody{
-      tr:hover{
-        td{
+    tbody {
+      tr:hover {
+        td {
           background-color: var(--hover-color);
         }
       }

@@ -11,5 +11,4 @@ import InNavLayout from '../InNavLayout.vue'
 import { AppNavs } from '@renderer/setting/app'
 </script>
 
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

@@ -4,7 +4,7 @@ export enum Gender {
 }
 
 export type Pagination = {
-  page: number;
-  limit: number;
-  total: number;
+  page: number
+  limit: number
+  total: number
 }

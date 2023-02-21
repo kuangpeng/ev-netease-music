@@ -1,7 +1,7 @@
 <template>
   <div>
     <n-el>
-      <n-space justify="space-between" :wrap-item="false" style="height: 100%;" :size="0">
+      <n-space justify="space-between" :wrap-item="false" style="height: 100%" :size="0">
         <bottom-song-box class="bottombar-left" />
         <bottom-song-control class="bottombar-center" />
         <bottom-song-set class="bottombar-right" />
@@ -17,15 +17,15 @@ import BottomSongSet from './components/BottomSongSet.vue'
 </script>
 
 <style lang="less" scoped>
-.bottombar-left{
+.bottombar-left {
   width: 28%;
   flex-basis: 28%;
 }
-.bottombar-center{
+.bottombar-center {
   width: 44%;
   flex-basis: 44%;
 }
-.bottombar-right{
+.bottombar-right {
   width: 28%;
   flex-basis: 28%;
 }

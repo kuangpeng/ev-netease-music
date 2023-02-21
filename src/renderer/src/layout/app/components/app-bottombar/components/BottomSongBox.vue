@@ -1,8 +1,8 @@
 <template>
   <div class="song-box">
     <n-carousel
-      class="carousel-wrap"
       ref="Carousel"
+      class="carousel-wrap"
       direction="vertical"
       :loop="false"
       :show-dots="false"
@@ -28,16 +28,15 @@ const setCarousel = (status: boolean): void => {
     Carousel.value && Carousel.value.to(0)
   }
 }
-
 </script>
 
 <style lang="less" scoped>
-.song-box{
+.song-box {
   position: relative;
   z-index: 100;
   flex: 1;
 }
-.carousel-wrap{
+.carousel-wrap {
   height: var(--app-bottombar-height);
 }
 </style>

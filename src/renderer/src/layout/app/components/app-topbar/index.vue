@@ -2,7 +2,7 @@
   <div class="relative z-100">
     <n-space id="app-topbar" justify="space-between" align="center" :wrap-item="false">
       <n-space class="top-left" align="center" :size="[10, 0]" :wrap-item="false">
-        <top-logo style="margin-right: 30px;" />
+        <top-logo style="margin-right: 30px" />
         <top-history-tool />
         <top-search />
       </n-space>
@@ -19,7 +19,7 @@ import TopControl from './components/TopControl.vue'
 </script>
 
 <style lang="less" scoped>
-#app-topbar{
+#app-topbar {
   background-color: #ed4141;
   width: 100%;
   height: var(--app-topbar-height);

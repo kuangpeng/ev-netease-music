@@ -6,7 +6,7 @@ export {}
 declare global {
   interface Window {
     electron: ElectronAPI
-    api: unknown,
+    api: unknown
     appSets: AppSets
   }
 }

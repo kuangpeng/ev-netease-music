@@ -65,7 +65,7 @@ app.whenReady().then(async () => {
 
   createWindow()
 
-  is.dev && await installDevTools()
+  is.dev && (await installDevTools())
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

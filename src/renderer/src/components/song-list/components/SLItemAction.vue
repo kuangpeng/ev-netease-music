@@ -28,9 +28,6 @@ const songLike = (id: number) => {
 const songDownLoad = (id: number) => {
   console.log('down ', id)
 }
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

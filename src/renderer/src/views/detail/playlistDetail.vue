@@ -8,10 +8,9 @@
 
     <div class="detail-content">
       <keep-alive>
-        <component v-bind:is="activeCmp" :id="playId" />
+        <component :is="activeCmp" :id="playId" />
       </keep-alive>
     </div>
-
   </div>
 </template>
 
@@ -72,17 +71,14 @@ const fetchList = useFetchList<typeof playlist.getPlayListDetail>(playlist.getPl
 
 const { onResult, onError } = fetchList(params)
 
-onResult(res => {
+onResult((res) => {
   detail.value = res.playlist
   navs.value[1].title += `(${res.playlist.commentCount})`
 })
 
-onError(err => {
+onError((err) => {
   console.log(err)
 })
-
 </script>
 
-<style lang="less" scoped>
-
-</style>
+<style lang="less" scoped></style>

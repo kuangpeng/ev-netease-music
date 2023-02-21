@@ -1,9 +1,9 @@
 /**
  * 初始化基础数据
  */
-import usePlaylistStore from "../store/modules/playlist"
+import usePlaylistStore from '../store/modules/playlist'
 
-export default function Initializer () {
+export default function Initializer() {
   console.log('booot')
   const playlistStore = usePlaylistStore()
 

@@ -3,8 +3,12 @@
     <n-el>
       <n-grid :x-gap="18" :y-gap="16" :cols="3">
         <n-gi v-for="(item, index) in newSongList" :key="index" class="song-gi-item">
-          <n-space type="flex" align="start" >
-            <div class="cover" :style="{backgroundImage: `url(${item.picUrl}?param=50y50)`}" @click="handleClick(item.id)">
+          <n-space type="flex" align="start">
+            <div
+              class="cover"
+              :style="{ backgroundImage: `url(${item.picUrl}?param=50y50)` }"
+              @click="handleClick(item.id)"
+            >
               <div class="icon">
                 <n-icon size="12" :component="Play16Filled" />
               </div>
@@ -45,15 +49,15 @@ const handleClick = (id: number) => {
 </script>
 
 <style lang="less" scoped>
-.song-gi-item{
+.song-gi-item {
   border-radius: 5px;
   overflow: hidden;
 
-  &:hover{
+  &:hover {
     background-color: var(--hover-color);
   }
 }
-.cover{
+.cover {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -66,22 +70,21 @@ const handleClick = (id: number) => {
   background-repeat: no-repeat;
   background-position: center;
 
-  .icon{
+  .icon {
     display: inline-block;
     font-size: 0;
     padding: 5px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, 0.8);
     color: var(--primary-color);
   }
 }
-.song-info{
+.song-info {
   font-size: 14px;
   line-height: 1;
-  .tit{
+  .tit {
     padding-top: 5px;
     margin-bottom: 8px;
   }
-
 }
 </style>

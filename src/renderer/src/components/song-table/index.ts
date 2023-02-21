@@ -5,9 +5,9 @@ import TableBody from './table-body'
 import type { TableColumn, TableInjectKey } from './table-types'
 
 export interface Props {
-  data: Array<unknown>;
-  columns: TableColumn[];
-  striped: boolean;
+  data: Array<unknown>
+  columns: TableColumn[]
+  striped: boolean
 }
 
 export default defineComponent({
@@ -27,9 +27,12 @@ export default defineComponent({
 
     const dataList = ref<unknown[]>([])
 
-    watch(() => props.data, (val) => {
-      dataList.value = val as unknown[]
-    })
+    watch(
+      () => props.data,
+      (val) => {
+        dataList.value = val as unknown[]
+      }
+    )
 
     provide<TableInjectKey>('song-table', {
       rows: dataList.value,
@@ -62,10 +65,17 @@ export default defineComponent({
   render() {
     const { loading, columns, colStyleFn } = this
 
-    const colVNode = h('colgroup', columns.map(c => h('col', { style: colStyleFn(c)})))
+    const colVNode = h(
+      'colgroup',
+      columns.map((c) => h('col', { style: colStyleFn(c) }))
+    )
 
-    const tableVnode = h('div', {class: 'data-table'},
-      loading ? h(NSpin) : h('table', {class: 's-data-table'}, [colVNode, h(TableHeader), h(TableBody)])
+    const tableVnode = h(
+      'div',
+      { class: 'data-table' },
+      loading
+        ? h(NSpin)
+        : h('table', { class: 's-data-table' }, [colVNode, h(TableHeader), h(TableBody)])
     )
 
     return tableVnode

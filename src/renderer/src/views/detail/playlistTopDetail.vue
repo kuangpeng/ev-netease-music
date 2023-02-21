@@ -1,13 +1,7 @@
 <template>
-  <div>
-精品歌单
-  </div>
+  <div>精品歌单</div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -2,20 +2,25 @@
   <div class="data-table_header">
     <table class="data-table">
       <colgroup>
-        <col v-for="(item, index) in columns" :key="index" :style="colStyleFn(item)" :align="item.align" />
+        <col
+          v-for="(item, index) in columns"
+          :key="index"
+          :style="colStyleFn(item)"
+          :align="item.align"
+        />
       </colgroup>
       <thead>
         <tr>
           <th v-for="(item, index) in columns" :key="index">
-              <template v-if="item.type">
-                {{ index + 1 }}
-              </template>
-              <template v-else>
-                <div class="cell cell_render" v-if="item.render">
-                  {{ renderFn(item, index) }}
-                </div>
-                <div class="cell" v-else>{{ item.title }}</div>
-              </template>
+            <template v-if="item.type">
+              {{ index + 1 }}
+            </template>
+            <template v-else>
+              <div v-if="item.render" class="cell cell_render">
+                {{ renderFn(item, index) }}
+              </div>
+              <div v-else class="cell">{{ item.title }}</div>
+            </template>
           </th>
         </tr>
       </thead>
@@ -27,8 +32,8 @@
 import type { TableColumn } from './table-types'
 
 export interface Props {
-  columns: Array<TableColumn>;
-  data: Array<unknown>;
+  columns: Array<TableColumn>
+  data: Array<unknown>
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -56,6 +61,4 @@ const renderFn = (row, index) => {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

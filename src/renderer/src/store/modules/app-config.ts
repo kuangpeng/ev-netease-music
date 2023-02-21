@@ -5,16 +5,12 @@ const useAppConfigStore = defineStore('app-config', {
   state: () => {
     return defaultState
   },
-  getters: {
-
-  },
-  actions: {
-
-  },
+  getters: {},
+  actions: {},
   presist: {
     enable: true,
-    resetToState: true,
-  },
+    resetToState: true
+  }
 })
 
 export default useAppConfigStore

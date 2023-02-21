@@ -8,17 +8,17 @@
         <n-layout-sider bordered width="var(--app-siderbar-width)">
           <app-siderbar />
         </n-layout-sider>
-        <n-layout id="scrollContainer" :native-scrollbar="false" :scrollbar-props="mainContentScrollbarProps">
+        <n-layout
+          id="scrollContainer"
+          :native-scrollbar="false"
+          :scrollbar-props="mainContentScrollbarProps"
+        >
           <div class="main-content">
             <router-view />
           </div>
         </n-layout>
       </n-layout>
-      <n-layout-footer
-        bordered
-        position="absolute"
-        class="layout-footer"
-      >
+      <n-layout-footer bordered position="absolute" class="layout-footer">
         <app-bottombar />
       </n-layout-footer>
     </n-layout>
@@ -39,24 +39,24 @@ const mainContentScrollbarProps: ScrollbarProps = {
 </script>
 
 <style lang="less" scoped>
-#app-layout{
+#app-layout {
   position: relative;
   // z-index: 100;
   width: 100vw;
   height: 100vh;
 }
-.layout-header{
+.layout-header {
   height: var(--app-topbar-height);
 }
-.layout-footer{
+.layout-footer {
   height: var(--app-bottombar-height);
   background: #fff;
 }
-.layout-main{
-  top: var(--app-topbar-height)!important;
-  bottom: var(--app-bottombar-height)!important;
+.layout-main {
+  top: var(--app-topbar-height) !important;
+  bottom: var(--app-bottombar-height) !important;
 }
-.main-content{
+.main-content {
   padding-bottom: 50px;
 }
 </style>

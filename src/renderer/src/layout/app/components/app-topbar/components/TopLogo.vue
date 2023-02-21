@@ -16,15 +16,15 @@ import logoText from '@renderer/assets/images/logo_text.png'
 </script>
 
 <style lang="less" scoped>
-.logo{
+.logo {
   padding: 0 18px;
   cursor: pointer;
 }
-.logo-icon{
+.logo-icon {
   font-size: 0;
   overflow: hidden;
 }
-.logo-text img{
+.logo-text img {
   width: 75%;
 }
 </style>

@@ -7,8 +7,8 @@
         <span
           v-for="(item, index) in hotCatList"
           :key="index"
+          :class="{ active: item.name == selectedCat }"
           @click="handleSetCat(item.name)"
-          :class="{active: item.name == selectedCat}"
         >
           {{ item.name }}
         </span>
@@ -16,8 +16,8 @@
     </n-space>
 
     <div class="mt-4">
-      <div class="min-h-100 flex justify-center items-center" v-show="isLoading" >
-          <n-spin />
+      <div v-show="isLoading" class="min-h-100 flex justify-center items-center">
+        <n-spin />
       </div>
 
       <block-list v-show="!isLoading" :list="list" />
@@ -52,7 +52,7 @@ const selectedCat = ref('')
 const list = ref<PlayListItem[]>([])
 
 const hotCatList = computed(() => {
-  return playlistStore.catList.sub.sort((c1, c2) => c1.category - c2.category).filter(c => c.hot)
+  return playlistStore.catList.sub.sort((c1, c2) => c1.category - c2.category).filter((c) => c.hot)
 })
 
 const handleSetCat = (name: string) => {
@@ -90,12 +90,12 @@ function getList() {
 
   const { onResult, onError, onEnd } = fetchList(params)
 
-  onResult(res => {
+  onResult((res) => {
     list.value = res.playlist
     pagination.total = res.total
   })
 
-  onError(err => {
+  onError((err) => {
     console.log(err)
   })
 
@@ -108,18 +108,18 @@ getList()
 </script>
 
 <style lang="less" scoped>
-.cats{
+.cats {
   font-size: 0;
   text-align: right;
 
-  span{
+  span {
     font-size: 12px;
     margin-left: 15px;
     color: #999;
     line-height: 1;
     cursor: pointer;
 
-    &.active{
+    &.active {
       color: var(--primary-color);
     }
   }

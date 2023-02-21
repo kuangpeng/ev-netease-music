@@ -36,7 +36,11 @@ if (process.contextIsolated) {
   window.appSets = appSets
   // @ts-ignore (define in dts)
   window.darkMode = {
-    toggle: (): void => { ipcRenderer.invoke('dark-mode:toggle') },
-    system: (): void => { ipcRenderer.invoke('dark-mode:system') }
+    toggle: (): void => {
+      ipcRenderer.invoke('dark-mode:toggle')
+    },
+    system: (): void => {
+      ipcRenderer.invoke('dark-mode:system')
+    }
   }
 }

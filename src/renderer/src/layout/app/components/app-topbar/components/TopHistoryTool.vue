@@ -22,6 +22,4 @@ import IosArrowBack from '@vicons/ionicons4/IosArrowBack'
 import IosArrowForward from '@vicons/ionicons4/IosArrowForward'
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

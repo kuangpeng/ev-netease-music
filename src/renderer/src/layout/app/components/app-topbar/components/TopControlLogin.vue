@@ -16,7 +16,7 @@ import MdArrowDropdown from '@vicons/ionicons4/MdArrowDropdown'
 </script>
 
 <style lang="less" scoped>
-.login-user-box{
+.login-user-box {
   cursor: pointer;
 }
 </style>

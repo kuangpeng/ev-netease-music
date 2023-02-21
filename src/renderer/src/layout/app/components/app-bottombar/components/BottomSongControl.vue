@@ -18,8 +18,12 @@
       </n-button>
       <n-button circle secondary size="large">
         <template #icon>
-          <span v-show="playStatus == PlayStatus.PLAY">&nbsp;<n-icon size="27" :component="MdPlay" title="播放" /></span>
-          <span v-show="playStatus == PlayStatus.PAUSE"><n-icon size="27" :component="IosPause" title="暂停" /></span>
+          <span v-show="playStatus == PlayStatus.PLAY"
+            >&nbsp;<n-icon size="27" :component="MdPlay" title="播放"
+          /></span>
+          <span v-show="playStatus == PlayStatus.PAUSE"
+            ><n-icon size="27" :component="IosPause" title="暂停"
+          /></span>
         </template>
       </n-button>
       <n-button text>
@@ -69,20 +73,20 @@ const songProgressMax = computed(() => {
 </script>
 
 <style lang="less" scoped>
-.song-control{
+.song-control {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
 }
-.song-play-control{
+.song-play-control {
   width: 100%;
 }
-.progress-bar{
+.progress-bar {
   width: 370px;
 }
-.time-num{
+.time-num {
   font-size: 10px;
 }
 </style>

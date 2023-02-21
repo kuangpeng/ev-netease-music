@@ -13,14 +13,14 @@
 
 <script setup lang="ts">
 export interface Props {
-  title?: string;
-  link?: string;
+  title?: string
+  link?: string
 }
 defineProps<Props>()
 </script>
 
 <style lang="less" scoped>
-.section-list{
+.section-list {
   display: grid;
   grid-template: auto / auto;
   gap: 10px;

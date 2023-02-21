@@ -1,4 +1,3 @@
-
 import 'virtual:svg-icons-register'
 import 'modern-css-reset'
 import 'vfonts/Lato.css'
@@ -11,8 +10,8 @@ import { useAppRouter } from './router'
 import bootstrap from './core/bootstrap'
 
 const app = createApp({
-  render: () => h(App),
-  created: bootstrap
+  created: bootstrap,
+  render: () => h(App)
 })
 
 useGlobalComponents(app)
